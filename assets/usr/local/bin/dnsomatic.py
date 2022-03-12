@@ -12,6 +12,7 @@ def log(level, msg):
 # get environment variables
 username = os.getenv('DNSOMATIC_USERNAME')
 password = os.getenv('DNSOMATIC_PASSWORD')
+ip_api_url = os.getenv('DNSOMATIC_IP_API_URL')
 delay = int(os.getenv('DNSOMATIC_DELAY'))
 interval = int(os.getenv('DNSOMATIC_INTERVAL'))
 tries = int(os.getenv('DNSOMATIC_TRIES'))
@@ -26,7 +27,7 @@ tried = 0
 while True:
     try:
         # get your IP address
-        req = requests.get('http://myip.dnsomatic.com/')
+        req = requests.get(ip_api_url)
         if req.status_code == 200:
             newIp = req.text
             if newIp != currentIp:

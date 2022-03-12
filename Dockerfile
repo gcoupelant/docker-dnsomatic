@@ -2,6 +2,7 @@ FROM codeworksio/python:3.6-20180212
 
 ENV DNSOMATIC_USERNAME="username" \
     DNSOMATIC_PASSWORD="password" \
+    DNSOMATIC_IP_API_URL="http://myip.dnsomatic.com/" \
     DNSOMATIC_DELAY="60" \
     DNSOMATIC_INTERVAL="60" \
     DNSOMATIC_TRIES="0"
